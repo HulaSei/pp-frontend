@@ -19,6 +19,12 @@ This document records all notable changes to ShadCN Admin.
 ---
 
 
+## [1.5.1](https://github.com/perfect-panel/frontend/compare/v1.5.0...v1.5.1) (2026-05-19)
+
+### 🐛 Bug Fixes / 问题修复
+
+* **auth:** use enable_reset_password_verify for cf_token schema in reset forms ([b0cfc8c](https://github.com/perfect-panel/frontend/commit/b0cfc8c1102c14a24540159f2d5c586cf3592502)), closes [#57](https://github.com/perfect-panel/frontend/issues/57)
+
 ## [1.5.0](https://github.com/perfect-panel/frontend/compare/v1.4.2...v1.5.0) (2026-05-11)
 
 ### ✨ Features / 新功能
