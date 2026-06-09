@@ -19,6 +19,12 @@ This document records all notable changes to ShadCN Admin.
 ---
 
 
+## [1.7.2](https://github.com/perfect-panel/frontend/compare/v1.7.1...v1.7.2) (2026-06-09)
+
+### 🐛 Bug Fixes / 问题修复
+
+* **user:** use avatar field instead of email for avatar image src ([5e9127e](https://github.com/perfect-panel/frontend/commit/5e9127ed0b674591097751f2f4789a8c9122d0c9))
+
 ## [1.7.1](https://github.com/perfect-panel/frontend/compare/v1.7.0...v1.7.1) (2026-06-09)
 
 ### 🐛 Bug Fixes / 问题修复
