@@ -19,6 +19,21 @@ This document records all notable changes to ShadCN Admin.
 ---
 
 
+## [1.9.0](https://github.com/perfect-panel/frontend/compare/v1.8.0...v1.9.0) (2026-06-20)
+
+### ✨ Features / 新功能
+
+* **admin:** add UDP over TCP (UoT) config for Shadowsocks ([06df3de](https://github.com/perfect-panel/frontend/commit/06df3dee3d7578ec6d01d72a8d79fa90ff3b847a)), closes [#91](https://github.com/perfect-panel/frontend/issues/91)
+* **admin:** add UDP over TCP (UoT) config for Shadowsocks ([6942999](https://github.com/perfect-panel/frontend/commit/6942999c624b7934c45f4f3408fa629f623ad3bd)), closes [#91](https://github.com/perfect-panel/frontend/issues/91)
+
+### 🐛 Bug Fixes / 问题修复
+
+* **servers:** correct uot_version type and remove duplicate uot fields ([36eee9c](https://github.com/perfect-panel/frontend/commit/36eee9c4d2adb36b8be0bccba582d62821eda001))
+
+### 🔧 Chores / 其他变更
+
+* **release:** Release 1.8.0-dev.1 / 发布版本 1.8.0-dev.1 [skip ci] ([c43f7b3](https://github.com/perfect-panel/frontend/commit/c43f7b3e0e09ec57c172819f833d6a35bb87c7bb))
+
 ## [1.8.0-dev.1](https://github.com/perfect-panel/frontend/compare/v1.7.4...v1.8.0-dev.1) (2026-06-20)
 
 ### ✨ Features / 新功能
