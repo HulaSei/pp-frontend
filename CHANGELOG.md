@@ -19,6 +19,12 @@ This document records all notable changes to ShadCN Admin.
 ---
 
 
+## [1.9.1](https://github.com/perfect-panel/frontend/compare/v1.9.0...v1.9.1) (2026-06-21)
+
+### 🐛 Bug Fixes / 问题修复
+
+* remove duplicate show_original_price field and deduplicate duration options ([9582a9e](https://github.com/perfect-panel/frontend/commit/9582a9e8b3f58037b70be0d8826659d72d2ba0ca)), closes [#93](https://github.com/perfect-panel/frontend/issues/93)
+
 ## [1.9.0](https://github.com/perfect-panel/frontend/compare/v1.8.0...v1.9.0) (2026-06-20)
 
 ### ✨ Features / 新功能
