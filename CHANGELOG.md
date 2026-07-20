@@ -19,6 +19,12 @@ This document records all notable changes to ShadCN Admin.
 ---
 
 
+## [1.13.0](https://github.com/perfect-panel/frontend/compare/v1.12.1...v1.13.0) (2026-07-20)
+
+### ✨ Features / 新功能
+
+* **admin:** add subscription profile header settings ([caaa08c](https://github.com/perfect-panel/frontend/commit/caaa08caac5884e1f0cb62c24b8c15c296b7ea42))
+
 ## [1.12.1](https://github.com/perfect-panel/frontend/compare/v1.12.0...v1.12.1) (2026-07-20)
 
 ### 🐛 Bug Fixes / 问题修复
