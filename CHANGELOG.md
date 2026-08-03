@@ -19,6 +19,48 @@ This document records all notable changes to ShadCN Admin.
 ---
 
 
+## [1.14.0-dev.2](https://github.com/perfect-panel/frontend/compare/v1.14.0-dev.1...v1.14.0-dev.2) (2026-08-02)
+
+### 🐛 Bug Fixes / 问题修复
+
+* stop rewriting the transport of a stored reality node ([883fc84](https://github.com/perfect-panel/frontend/commit/883fc84e5e9e2b468f219f7baefdbb94228e5e22))
+
+## [1.14.0-dev.1](https://github.com/perfect-panel/frontend/compare/v1.13.1...v1.14.0-dev.1) (2026-08-02)
+
+### ✨ Features / 新功能
+
+* align server protocol, telegram and oauth with the panel ([e7d9250](https://github.com/perfect-panel/frontend/commit/e7d92509285e6ca29284e14eaf432f7268ed8381))
+
+## [1.13.1](https://github.com/perfect-panel/frontend/compare/v1.13.0...v1.13.1) (2026-08-02)
+
+### 🐛 Bug Fixes / 问题修复
+
+* **ui:** reset table pagination on filter change ([#134](https://github.com/perfect-panel/frontend/issues/134)) ([832d5b0](https://github.com/perfect-panel/frontend/commit/832d5b0fca28fada7c7628bcce5f336ac86db7f7))
+* **user:** handle subscription availability and expiry ([dff413a](https://github.com/perfect-panel/frontend/commit/dff413a60f42ec5b93e5cfeaa5022b6318ffa44f)), closes [#131](https://github.com/perfect-panel/frontend/issues/131) [#135](https://github.com/perfect-panel/frontend/issues/135)
+* **user:** use Telegram deep link binding ([af50f83](https://github.com/perfect-panel/frontend/commit/af50f835aa3a06f0daf70c8d29cc9c09a4ba4225))
+
+### 📚 Documentation / 文档更新
+
+* update repository badges and links ([31b1f23](https://github.com/perfect-panel/frontend/commit/31b1f2398fb5037c3d2e148a2ec04e66d2a35009))
+
+### 🔧 Chores / 其他变更
+
+* **release:** Release 1.13.1-dev.1 / 发布版本 1.13.1-dev.1 [skip ci] ([45808a4](https://github.com/perfect-panel/frontend/commit/45808a4221468e32e1a29232f47e60a7cdfb8d79))
+* **release:** Release 1.13.1-dev.2 / 发布版本 1.13.1-dev.2 [skip ci] ([170430b](https://github.com/perfect-panel/frontend/commit/170430b0b2ed01b2769f23209ce8a52041211d88))
+
+## [1.13.1-dev.2](https://github.com/perfect-panel/frontend/compare/v1.13.1-dev.1...v1.13.1-dev.2) (2026-08-02)
+
+### 🐛 Bug Fixes / 问题修复
+
+* **ui:** reset table pagination on filter change ([#134](https://github.com/perfect-panel/frontend/issues/134)) ([832d5b0](https://github.com/perfect-panel/frontend/commit/832d5b0fca28fada7c7628bcce5f336ac86db7f7))
+
+## [1.13.1-dev.1](https://github.com/perfect-panel/frontend/compare/v1.13.0...v1.13.1-dev.1) (2026-08-02)
+
+### 🐛 Bug Fixes / 问题修复
+
+* **user:** handle subscription availability and expiry ([dff413a](https://github.com/perfect-panel/frontend/commit/dff413a60f42ec5b93e5cfeaa5022b6318ffa44f)), closes [#131](https://github.com/perfect-panel/frontend/issues/131) [#135](https://github.com/perfect-panel/frontend/issues/135)
+* **user:** use Telegram deep link binding ([af50f83](https://github.com/perfect-panel/frontend/commit/af50f835aa3a06f0daf70c8d29cc9c09a4ba4225))
+
 ## [1.13.0](https://github.com/perfect-panel/frontend/compare/v1.12.1...v1.13.0) (2026-07-20)
 
 ### ✨ Features / 新功能
