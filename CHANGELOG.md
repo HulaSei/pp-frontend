@@ -19,6 +19,63 @@ This document records all notable changes to ShadCN Admin.
 ---
 
 
+## [1.20.0](https://github.com/perfect-panel/frontend/compare/v1.19.1...v1.20.0) (2026-08-29)
+
+### ✨ Features / 新功能
+
+* **admin:** add order creation log page ([9e51a57](https://github.com/perfect-panel/frontend/commit/9e51a5749f8802e2924caa16d36c9f3f5d7cb284))
+
+### 📚 Documentation / 文档更新
+
+* **api:** sync Swagger from backend ([db65b6f](https://github.com/perfect-panel/frontend/commit/db65b6f37d81891940874a1f8168341f2d8b1bc9))
+
+### 🔧 Chores / 其他变更
+
+* **api:** regenerate OpenAPI client ([9565d73](https://github.com/perfect-panel/frontend/commit/9565d730e88773cdeeb63631ffd398887fe9e84a))
+
+## [1.19.1](https://github.com/perfect-panel/frontend/compare/v1.19.0...v1.19.1) (2026-08-29)
+
+### 🐛 Bug Fixes / 问题修复
+
+* **admin:** correct timezone offset display ([4e6d5ff](https://github.com/perfect-panel/frontend/commit/4e6d5ff99783749fec3d670bf048088c6d31b54e))
+
+## [1.19.0](https://github.com/perfect-panel/frontend/compare/v1.18.1...v1.19.0) (2026-08-29)
+
+### ✨ Features / 新功能
+
+* **admin:** display log request risk metadata ([6ce8a8a](https://github.com/perfect-panel/frontend/commit/6ce8a8ae5f596d8d9b0971f83cd945f9229aed2d))
+
+### 📚 Documentation / 文档更新
+
+* **api:** sync Swagger from backend ([411e72b](https://github.com/perfect-panel/frontend/commit/411e72becbb38bcd80c5bb97443a863b803527a8))
+
+### 🔧 Chores / 其他变更
+
+* **release:** Release 1.16.0-dev.3 / 发布版本 1.16.0-dev.3 [skip ci] ([3af3fc5](https://github.com/perfect-panel/frontend/commit/3af3fc5337d4c4f32d11c887b211ec4e44d60cc9))
+* **release:** Release 1.17.0-dev.1 / 发布版本 1.17.0-dev.1 [skip ci] ([77e56ad](https://github.com/perfect-panel/frontend/commit/77e56ad6e9a784829e28c0b338cf29b3b7ba8420))
+* **release:** Release 1.19.0-dev.1 / 发布版本 1.19.0-dev.1 [skip ci] ([8443561](https://github.com/perfect-panel/frontend/commit/84435613790fcab21999b7a62c6483ac9fd09661))
+
+## [1.19.0-dev.1](https://github.com/perfect-panel/frontend/compare/v1.18.1...v1.19.0-dev.1) (2026-08-29)
+
+### ✨ Features / 新功能
+
+* **admin:** display log request risk metadata ([6ce8a8a](https://github.com/perfect-panel/frontend/commit/6ce8a8ae5f596d8d9b0971f83cd945f9229aed2d))
+
+### 📚 Documentation / 文档更新
+
+* **api:** sync Swagger from backend ([411e72b](https://github.com/perfect-panel/frontend/commit/411e72becbb38bcd80c5bb97443a863b803527a8))
+
+### 🔧 Chores / 其他变更
+
+* **release:** Release 1.16.0-dev.3 / 发布版本 1.16.0-dev.3 [skip ci] ([3af3fc5](https://github.com/perfect-panel/frontend/commit/3af3fc5337d4c4f32d11c887b211ec4e44d60cc9))
+* **release:** Release 1.17.0-dev.1 / 发布版本 1.17.0-dev.1 [skip ci] ([77e56ad](https://github.com/perfect-panel/frontend/commit/77e56ad6e9a784829e28c0b338cf29b3b7ba8420))
+
+## [1.18.1](https://github.com/perfect-panel/frontend/compare/v1.18.0...v1.18.1) (2026-08-29)
+
+### 🐛 Bug Fixes / 问题修复
+
+* **admin:** restore dashboard sponsors ([41dd6c7](https://github.com/perfect-panel/frontend/commit/41dd6c76a03b0f741444e6f9b5db43e3d67c928a))
+
 ## [1.18.0](https://github.com/perfect-panel/frontend/compare/v1.17.0...v1.18.0) (2026-08-28)
 
 ### ✨ Features / 新功能

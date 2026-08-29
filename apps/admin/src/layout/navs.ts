@@ -58,7 +58,7 @@ export function useNavs() {
             icon: "flat-color-icons:todo-list",
           },
           {
-            title: t("Withdrawal Management", "Withdrawal Management"),
+            title: t("Commission Management", "Commission Management"),
             url: "/dashboard/withdrawal",
             icon: "flat-color-icons:currency-exchange",
           },
@@ -167,6 +167,7 @@ export function useNavs() {
             url: "/dashboard/log/balance",
             icon: "flat-color-icons:sales-performance",
             activeUrls: [
+              "/dashboard/log/order",
               "/dashboard/log/balance",
               "/dashboard/log/commission",
               "/dashboard/log/gift",
