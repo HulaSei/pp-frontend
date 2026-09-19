@@ -578,6 +578,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogBalanceListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -586,6 +588,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogCommissionListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -594,6 +598,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogEmailListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -601,6 +607,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogGiftListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -609,6 +617,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogLoginListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -624,6 +634,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogMobileListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -631,6 +643,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogOrderListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -639,6 +653,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogRegisterListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -647,6 +663,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogServerTrafficListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     server_id?: number;
@@ -655,6 +673,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogSubscribeListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -664,6 +684,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogSubscribeResetListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -672,6 +694,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogSubscribeTrafficListParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     size: number;
@@ -681,6 +705,8 @@ subscription URL does not carry them, in query-string form such as
 
   type getLogTrafficDetailsParams = {
     date?: string;
+    start_date?: string;
+    end_date?: string;
     page: number;
     search?: string;
     server_id?: number;
