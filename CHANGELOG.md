@@ -19,6 +19,12 @@ This document records all notable changes to ShadCN Admin.
 ---
 
 
+## [1.22.0-dev.1](https://github.com/perfect-panel/frontend/compare/v1.21.0...v1.22.0-dev.1) (2026-09-19)
+
+### ✨ Features / 新功能
+
+* **log:** add date range filters to admin logs ([16b11ac](https://github.com/perfect-panel/frontend/commit/16b11acfaa099695926667ac05a3d3a7cc77af7b))
+
 ## [1.21.0](https://github.com/perfect-panel/frontend/compare/v1.20.0...v1.21.0) (2026-09-05)
 
 ### ✨ Features / 新功能
