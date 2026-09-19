@@ -19,6 +19,12 @@ This document records all notable changes to ShadCN Admin.
 ---
 
 
+## [1.22.0-dev.2](https://github.com/perfect-panel/frontend/compare/v1.22.0-dev.1...v1.22.0-dev.2) (2026-09-19)
+
+### 🐛 Bug Fixes / 问题修复
+
+* **order:** initialize search filter from URL ([ae6def9](https://github.com/perfect-panel/frontend/commit/ae6def96b965ab515b418cb6a2cec56b527a2d95))
+
 ## [1.22.0-dev.1](https://github.com/perfect-panel/frontend/compare/v1.21.0...v1.22.0-dev.1) (2026-09-19)
 
 ### ✨ Features / 新功能
