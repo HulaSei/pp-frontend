@@ -1731,6 +1731,30 @@
                 }
             }
         },
+        "/v1/public/user/logout": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "Logout",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/result.ResponseSuccessBean"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/public/user/notify": {
             "put": {
                 "security": [
@@ -3217,7 +3241,11 @@
             ],
             "properties": {
                 "auth_type": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "email",
+                        "mobile"
+                    ]
                 },
                 "coupon": {
                     "type": "string"
@@ -3822,9 +3850,14 @@
         "dto.UpdateBindEmailRequest": {
             "type": "object",
             "required": [
+                "code",
                 "email"
             ],
             "properties": {
+                "code": {
+                    "description": "Code is the register-type verification code sent to Email.",
+                    "type": "string"
+                },
                 "email": {
                     "type": "string"
                 }
@@ -3872,6 +3905,11 @@
                 "password"
             ],
             "properties": {
+                "old_password": {
+                    "description": "OldPassword is required once the account has a password; accounts\ncreated through OAuth or device sign-in set their first one without it.",
+                    "type": "string",
+                    "maxLength": 128
+                },
                 "password": {
                     "type": "string",
                     "maxLength": 128,
@@ -4379,7 +4417,11 @@
             "type": "object",
             "properties": {
                 "auth_type": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "email",
+                        "mobile"
+                    ]
                 },
                 "identifier": {
                     "type": "string"
@@ -4388,6 +4430,9 @@
                     "type": "string"
                 },
                 "password": {
+                    "type": "string"
+                },
+                "turnstile_token": {
                     "type": "string"
                 }
             }
