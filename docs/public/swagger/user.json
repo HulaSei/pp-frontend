@@ -684,6 +684,12 @@
                         "name": "order_no",
                         "in": "query",
                         "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Guest checkout capability; preferred over the checkout_token query parameter",
+                        "name": "X-Checkout-Token",
+                        "in": "header"
                     }
                 ],
                 "responses": {
@@ -1308,6 +1314,7 @@
                         "BearerAuth": []
                     }
                 ],
+                "description": "Binds the email address proven by the code sent to it. Replacing the one the account already has also requires the current password (password), or, for an account without a password, the security code sent to the current email address (current_code), and ends every session of the account.",
                 "consumes": [
                     "application/json"
                 ],
@@ -1346,6 +1353,7 @@
                         "BearerAuth": []
                     }
                 ],
+                "description": "Binds the phone number proven by the code sent to it. Replacing the one the account already has also requires the current password (password), or, for an account without a password, the security code sent to the current phone number (current_code), and ends every session of the account.",
                 "consumes": [
                     "application/json"
                 ],
@@ -1836,6 +1844,7 @@
                         "BearerAuth": []
                     }
                 ],
+                "description": "Sets the account's password and ends every session of the account. Changing an existing password requires the current one (old_password); setting the first password of an account with a bound email or phone number requires the security code sent to it (current_code); an account with neither sets it with the session alone.",
                 "consumes": [
                     "application/json"
                 ],
@@ -2804,7 +2813,8 @@
                         "google",
                         "apple",
                         "telegram",
-                        "github"
+                        "github",
+                        "facebook"
                     ]
                 }
             }
@@ -2822,7 +2832,8 @@
                         "google",
                         "apple",
                         "telegram",
-                        "github"
+                        "github",
+                        "facebook"
                     ]
                 },
                 "redirect": {
@@ -3858,8 +3869,17 @@
                     "description": "Code is the register-type verification code sent to Email.",
                     "type": "string"
                 },
+                "current_code": {
+                    "description": "CurrentCode is the security-type verification code sent to the email\nthe account already has. Replacing it requires the code when the\naccount has no password.",
+                    "type": "string"
+                },
                 "email": {
                     "type": "string"
+                },
+                "password": {
+                    "description": "Password is the account's current password. Replacing an email the\naccount already has requires it when the account has a password; a\nfirst binding does not.",
+                    "type": "string",
+                    "maxLength": 128
                 }
             }
         },
@@ -3875,10 +3895,20 @@
                     "type": "string"
                 },
                 "code": {
+                    "description": "Code is the register-type verification code sent to Mobile.",
+                    "type": "string"
+                },
+                "current_code": {
+                    "description": "CurrentCode is the security-type verification code sent to the number\nthe account already has. Replacing it requires the code when the\naccount has no password.",
                     "type": "string"
                 },
                 "mobile": {
                     "type": "string"
+                },
+                "password": {
+                    "description": "Password is the account's current password. Replacing a number the\naccount already has requires it when the account has a password; a\nfirst binding does not.",
+                    "type": "string",
+                    "maxLength": 128
                 }
             }
         },
@@ -3905,8 +3935,12 @@
                 "password"
             ],
             "properties": {
+                "current_code": {
+                    "description": "CurrentCode is the security-type verification code sent to the email\nor phone number the account has bound. Setting the first password of\nan account that has one bound requires it; an account with neither a\npassword nor a bound email or phone number (OAuth or device sign-in\nonly) sets its first password without it.",
+                    "type": "string"
+                },
                 "old_password": {
-                    "description": "OldPassword is required once the account has a password; accounts\ncreated through OAuth or device sign-in set their first one without it.",
+                    "description": "OldPassword is required once the account has a password.",
                     "type": "string",
                     "maxLength": 128
                 },
