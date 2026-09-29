@@ -44,6 +44,44 @@
                 }
             }
         },
+        "/v1/app/ws/{userid}/{identifier}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Upgrades the connection to the signed-in user's device socket. The client sends \"ping\" (or \"heartbeat\") as its heartbeat and is answered \"ping\"; the server pushes JSON messages such as {\"method\":\"subscribe_update\"}, {\"method\":\"kicked_device\"} and {\"method\":\"kicked_admin\"}.",
+                "tags": [
+                    "user"
+                ],
+                "summary": "Device WebSocket",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "User ID of the signed-in user",
+                        "name": "userid",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Device identifier",
+                        "name": "identifier",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "101": {
+                        "description": "Switching Protocols",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/public/announcement/list": {
             "get": {
                 "security": [
@@ -1844,7 +1882,7 @@
                         "BearerAuth": []
                     }
                 ],
-                "description": "Sets the account's password and ends every session of the account. Changing an existing password requires the current one (old_password); setting the first password of an account with a bound email or phone number requires the security code sent to it (current_code); an account with neither sets it with the session alone.",
+                "description": "Sets the account's password and ends every session of the account. Changing an existing password requires the current one (old_password); setting the first password of an account with a bound email or phone number requires the security code sent to it (current_code); an account with neither sets it with the session alone. The response lists the third-party sign-in methods (OAuth providers, Telegram) still bound to the account, which the change does not remove.",
                 "consumes": [
                     "application/json"
                 ],
@@ -1870,7 +1908,19 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/result.ResponseSuccessBean"
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/result.ResponseSuccessBean"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/dto.UpdateUserPasswordResponse"
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     }
                 }
@@ -2973,29 +3023,46 @@
         },
         "dto.CreateUserTicketFollowRequest": {
             "type": "object",
+            "required": [
+                "content",
+                "ticket_id"
+            ],
             "properties": {
                 "content": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 65535
                 },
                 "from": {
-                    "type": "string"
+                    "description": "From is ignored: the author is always the ticket owner.",
+                    "type": "string",
+                    "maxLength": 255
                 },
                 "ticket_id": {
                     "type": "integer"
                 },
                 "type": {
-                    "type": "integer"
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
                 }
             }
         },
         "dto.CreateUserTicketRequest": {
             "type": "object",
+            "required": [
+                "title"
+            ],
             "properties": {
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 10000
                 },
                 "title": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 255
                 }
             }
         },
@@ -3204,6 +3271,10 @@
                     "type": "integer"
                 },
                 "user_id": {
+                    "type": "integer"
+                },
+                "user_subscribe_id": {
+                    "description": "UserSubscribeId is the user subscription a renewal or traffic reset\norder applies to; zero for other orders and for orders created before\nit was recorded.",
                     "type": "integer"
                 }
             }
@@ -3951,6 +4022,18 @@
                 }
             }
         },
+        "dto.UpdateUserPasswordResponse": {
+            "type": "object",
+            "properties": {
+                "third_party_bindings": {
+                    "description": "ThirdPartyBindings lists the types of the third-party sign-in methods\n(OAuth providers, Telegram) still bound to the account, so the client\ncan show them: a binding made during a compromise keeps signing in\nuntil its owner removes it.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
         "dto.UpdateUserRulesRequest": {
             "type": "object",
             "required": [
@@ -4053,7 +4136,8 @@
                     "type": "integer"
                 },
                 "referral_percentage": {
-                    "type": "integer"
+                    "type": "integer",
+                    "maximum": 100
                 },
                 "rules": {
                     "type": "array",

@@ -1597,6 +1597,87 @@
                 }
             }
         },
+        "/v1/admin/log/admin/list": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Pages the administrators' audit trail: settings changes, marketing tasks, ticket actions and Telegram bot commands, with the acting administrator and the request they came from.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "admin"
+                ],
+                "summary": "Filter admin action log",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "name": "date",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "end_date",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "name": "search",
+                        "in": "query"
+                    },
+                    {
+                        "maximum": 100,
+                        "type": "integer",
+                        "name": "size",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "name": "start_date",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "UserId narrows the trail to one administrator.",
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/result.ResponseSuccessBean"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/dto.FilterAdminActionLogResponse"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
         "/v1/admin/log/balance/list": {
             "get": {
                 "security": [
@@ -2200,6 +2281,87 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/definitions/dto.FilterOrderLogResponse"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/admin/log/payment/unmatched/list": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Pages the payments a gateway confirmed that could not settle their order, with the order and trade numbers, the amount and the reason, for manual refunds.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "admin"
+                ],
+                "summary": "Filter unmatched payment log",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "name": "date",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "end_date",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "name": "search",
+                        "in": "query"
+                    },
+                    {
+                        "maximum": 100,
+                        "type": "integer",
+                        "name": "size",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "name": "start_date",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "UserId narrows the list to one payer.",
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/result.ResponseSuccessBean"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/definitions/dto.FilterUnmatchedPaymentLogResponse"
                                         }
                                     }
                                 }
@@ -5844,7 +6006,7 @@
             }
         },
         "/v1/admin/tool/restart": {
-            "get": {
+            "post": {
                 "security": [
                     {
                         "BearerAuth": []
@@ -7281,6 +7443,65 @@
         }
     },
     "definitions": {
+        "dto.AdminActionLog": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string"
+                },
+                "client_ip": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "integer"
+                },
+                "detail": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "ip_as_organization": {
+                    "type": "string"
+                },
+                "ip_asn": {
+                    "type": "integer"
+                },
+                "ip_city": {
+                    "type": "string"
+                },
+                "ip_country": {
+                    "type": "string"
+                },
+                "ip_country_code": {
+                    "type": "string"
+                },
+                "ip_region": {
+                    "type": "string"
+                },
+                "object": {
+                    "type": "string"
+                },
+                "object_id": {
+                    "type": "integer"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "telegram_sender_id": {
+                    "type": "integer"
+                },
+                "timestamp": {
+                    "type": "integer"
+                },
+                "user_agent": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "integer"
+                }
+            }
+        },
         "dto.Ads": {
             "type": "object",
             "properties": {
@@ -7510,7 +7731,11 @@
                 "limit": {
                     "type": "integer"
                 },
+                "recipient_count": {
+                    "type": "integer"
+                },
                 "recipients": {
+                    "description": "Recipients lists the first recorded recipients, one per line, and\nsays how many more there are; RecipientCount is the whole audience,\nthe additional addresses included.",
                     "type": "string"
                 },
                 "register_end_time": {
@@ -7877,7 +8102,8 @@
                 },
                 "quantity": {
                     "type": "integer",
-                    "maximum": 1000
+                    "maximum": 1000,
+                    "minimum": 1
                 },
                 "status": {
                     "type": "integer"
@@ -7886,12 +8112,23 @@
                     "type": "integer"
                 },
                 "trade_no": {
+                    "description": "TradeNo is refused when set: the gateway assigns it when the order is\npaid, and Stripe and Cryptomus read it as their own payment identifier.",
                     "type": "string"
                 },
                 "type": {
-                    "type": "integer"
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        4
+                    ]
                 },
                 "user_id": {
+                    "type": "integer"
+                },
+                "user_subscribe_id": {
+                    "description": "UserSubscribeId is the user subscription a renewal (type 2) or traffic\nreset (type 3) order applies to; required for those types.",
                     "type": "integer"
                 }
             }
@@ -8143,16 +8380,22 @@
             ],
             "properties": {
                 "content": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 65535
                 },
                 "from": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 255
                 },
                 "ticket_id": {
                     "type": "integer"
                 },
                 "type": {
-                    "type": "integer"
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        2
+                    ]
                 }
             }
         },
@@ -8207,7 +8450,8 @@
                     "type": "string"
                 },
                 "referral_percentage": {
-                    "type": "integer"
+                    "type": "integer",
+                    "maximum": 100
                 },
                 "telephone": {
                     "type": "string"
@@ -8425,6 +8669,20 @@
                 }
             }
         },
+        "dto.FilterAdminActionLogResponse": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/dto.AdminActionLog"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
         "dto.FilterBalanceLogResponse": {
             "type": "object",
             "properties": {
@@ -8628,6 +8886,20 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/dto.TrafficLogDetails"
+                    }
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "dto.FilterUnmatchedPaymentLogResponse": {
+            "type": "object",
+            "properties": {
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/dto.UnmatchedPaymentLog"
                     }
                 },
                 "total": {
@@ -9170,7 +9442,7 @@
                 "clear_days": {
                     "type": "integer",
                     "maximum": 3650,
-                    "minimum": 1
+                    "minimum": 7
                 }
             }
         },
@@ -9561,6 +9833,10 @@
                     "type": "integer"
                 },
                 "user_id": {
+                    "type": "integer"
+                },
+                "user_subscribe_id": {
+                    "description": "UserSubscribeId is the user subscription a renewal or traffic reset\norder applies to; zero for other orders and for orders created before\nit was recorded.",
                     "type": "integer"
                 }
             }
@@ -11310,6 +11586,68 @@
                 }
             }
         },
+        "dto.UnmatchedPaymentLog": {
+            "type": "object",
+            "properties": {
+                "actor_id": {
+                    "type": "integer"
+                },
+                "amount": {
+                    "type": "integer"
+                },
+                "client_ip": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "integer"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "ip_as_organization": {
+                    "type": "string"
+                },
+                "ip_asn": {
+                    "type": "integer"
+                },
+                "ip_city": {
+                    "type": "string"
+                },
+                "ip_country": {
+                    "type": "string"
+                },
+                "ip_country_code": {
+                    "type": "string"
+                },
+                "ip_region": {
+                    "type": "string"
+                },
+                "order_no": {
+                    "type": "string"
+                },
+                "platform": {
+                    "type": "string"
+                },
+                "reason": {
+                    "type": "string"
+                },
+                "timestamp": {
+                    "type": "integer"
+                },
+                "trade_no": {
+                    "type": "string"
+                },
+                "user_agent": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "integer"
+                }
+            }
+        },
         "dto.UpdateAdsRequest": {
             "type": "object",
             "properties": {
@@ -11845,7 +12183,8 @@
                     "type": "integer"
                 },
                 "referral_percentage": {
-                    "type": "integer"
+                    "type": "integer",
+                    "maximum": 100
                 },
                 "telegram": {
                     "type": "integer"
