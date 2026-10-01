@@ -19,6 +19,20 @@ This document records all notable changes to ShadCN Admin.
 ---
 
 
+## [1.22.0-dev.3](https://github.com/perfect-panel/frontend/compare/v1.22.0-dev.2...v1.22.0-dev.3) (2026-10-01)
+
+### 🐛 Bug Fixes / 问题修复
+
+* **admin:** restore client fingerprint fields ([fea3b85](https://github.com/perfect-panel/frontend/commit/fea3b8522f234c9d6b5530b458a4807e6dc62bf6))
+* **api:** adapt to backend credential checks ([641b0c4](https://github.com/perfect-panel/frontend/commit/641b0c4f9e57f1278e66186e39f4a5fa3ccbd784))
+
+### 📚 Documentation / 文档更新
+
+* **api:** sync Swagger from backend ([3714dbd](https://github.com/perfect-panel/frontend/commit/3714dbd7c77f43bf3bcea40c321d7cf556a19ac7))
+* **api:** sync Swagger from backend ([aa722e6](https://github.com/perfect-panel/frontend/commit/aa722e687dd9260c1c1be23917fcb628e8823dff))
+* **api:** sync Swagger from backend ([fe2cdeb](https://github.com/perfect-panel/frontend/commit/fe2cdeb2a2f520f73346b82f7242d482ca0da989))
+* **api:** sync Swagger from backend ([849c939](https://github.com/perfect-panel/frontend/commit/849c939b687bc1c4f6f98ea48563ffa1e4712130))
+
 ## [1.22.0-dev.2](https://github.com/perfect-panel/frontend/compare/v1.22.0-dev.1...v1.22.0-dev.2) (2026-09-19)
 
 ### 🐛 Bug Fixes / 问题修复
